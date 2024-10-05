@@ -61,22 +61,20 @@
         <img src="love.jpg" alt="Love">
     </div>
 
-    <audio id="audio" src="Bruno.mp3"></audio> <!-- Hapus autoplay dari audio -->
+    <audio id="audio" src="Bruno.mp3" autoplay></audio>
 
     <script>
-        // Fungsi untuk menampilkan animasi heart dan memutar audio
+        // Memastikan audio dimainkan saat halaman terbuka
+        document.getElementById('audio').play();
+
+        // Fungsi untuk menampilkan animasi heart
         function createHeart() {
             const heart = document.createElement('div');
             heart.className = 'heart';
-            heart.innerText = '💖'; // Menggunakan emoji hati
+            heart.innerText = '❤️'; // Menggunakan emoji hati
             heart.style.left = Math.random() * 100 + 'vw'; // Posisi acak dari kiri
             heart.style.fontSize = Math.random() * 1.5 + 1 + 'em'; // Ukuran acak untuk variasi
             document.body.appendChild(heart);
-
-            // Memutar audio ketika hati ditampilkan
-            const audio = document.getElementById('audio');
-            audio.currentTime = 0; // Mengatur waktu audio ke awal
-            audio.play(); // Memainkan audio
 
             // Menghapus heart setelah animasi selesai
             setTimeout(() => {
