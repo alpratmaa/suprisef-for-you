@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Menambahkan viewport untuk responsivitas -->
+    <title>Success</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow: hidden; /* Menyembunyikan scrollbar */
+            margin: 0; /* Menghilangkan margin default */
+            display: flex; /* Menggunakan flexbox untuk penataan */
+            flex-direction: column; /* Mengatur arah kolom */
+            align-items: center; /* Mengatur item ke tengah */
+            justify-content: center; /* Mengatur item ke tengah secara vertikal */
+            height: 100vh; /* Mengatur tinggi body untuk mengambil seluruh tinggi layar */
+            background: url('bacground.jpg') no-repeat center center fixed; /* Mengatur background */
+            background-size: cover; /* Mengatur agar background menutupi seluruh layar */
+        }
+
+        h1 {
+            color: white; /* Warna teks putih untuk kontras */
+            font-size: 2.5em; /* Ukuran font besar untuk judul */
+            text-align: center; /* Menengahkan teks */
+        }
+
+        p {
+            color: white; /* Warna teks putih untuk kontras */
+            font-size: 1.5em; /* Ukuran font untuk teks */
+            text-align: center; /* Menengahkan teks */
+        }
+
+        img {
+            width: 80%; /* Ukuran gambar responsif */
+            max-width: 300px; /* Ukuran maksimum gambar */
+            height: auto; /* Mengatur agar tinggi gambar otomatis */
+            margin-top: 20px; /* Memberikan jarak atas */
+        }
+
+        /* Gaya untuk hati */
+        .heart {
+            position: absolute;
+            font-size: 2em; /* Ukuran emoji */
+            animation: fall 3s linear forwards; /* Animasi jatuh */
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px); /* Mulai dari 100px di atas layar */
+            }
+            100% {
+                transform: translateY(100vh); /* Jatuh ke bawah */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>thank you for my best part</h1>
+        <p></p>
+        <img src="love.jpg" alt="Love">
+    </div>
+
+    <audio id="audio" src="Bruno.mp3" autoplay></audio>
+
+    <script>
+        // Memastikan audio dimainkan saat halaman terbuka
+        document.getElementById('audio').play();
+
+        // Fungsi untuk menampilkan animasi heart
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerText = '❤️'; // Menggunakan emoji hati
+            heart.style.left = Math.random() * 100 + 'vw'; // Posisi acak dari kiri
+            heart.style.fontSize = Math.random() * 1.5 + 1 + 'em'; // Ukuran acak untuk variasi
+            document.body.appendChild(heart);
+
+            // Menghapus heart setelah animasi selesai
+            setTimeout(() => {
+                heart.remove();
+            }, 3000); // Waktu yang sama dengan durasi animasi jatuh
+        }
+
+        // Buat heart setiap 500ms
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>

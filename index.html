@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pernyataan Cinta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Telah banyak waktuku terlewati bersamamu, suka maupun duka senang maupun susah kamu telah menghiasi hariku saat aku bersamamu dan aku mau kita selamanya dekat denganmu. Karna aku mau kamu jadi pacar aku. Will you be my girlfriend?</h1>
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+
+    <script>
+        document.getElementById('yes-btn').addEventListener('click', function() {
+            // Pindah ke halaman baru (success.html)
+            window.location.href = 'success.html';
+        });
+
+        document.getElementById('no-btn').addEventListener('click', function() {
+            alert("Oh no! Maybe next time :)");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('bacground.jpg'); /* Ganti dengan gambar latar belakang yang kamu inginkan */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(254, 254, 254, 0);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #9b9494;
+}
+
+button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#yes-btn {
+    background-color: #cf74f7;
+    color: white;
+}
+
+#no-btn {
+    background-color: #cf74f7;
+    color: white;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: heartbeat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    left: 25px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0%, 20% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
